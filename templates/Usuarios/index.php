@@ -14,6 +14,9 @@
 </head>
 
 <body>
+    <?php
+    echo $this->Html->link('Cadastrar Usuario', ['controller' => 'Usuarios', 'action' => 'add'])
+    ?>
     <table>
         <thead>
             <tr>
