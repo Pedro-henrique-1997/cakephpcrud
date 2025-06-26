@@ -13,9 +13,9 @@
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('nome_categoria') ?></th>
-                    <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
+                    <th><?= $this->Paginator->sort('Criado na data ') ?></th>
+                    <th><?= $this->Paginator->sort('Modificado na data') ?></th>
+                    <th class="actions"><?= __('Ações') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -23,8 +23,8 @@
                 <tr>
                     <td><?= $this->Number->format($categoria->id) ?></td>
                     <td><?= h($categoria->nome_categoria) ?></td>
-                    <td><?= h($categoria->created) ?></td>
-                    <td><?= h($categoria->modified) ?></td>
+                    <td><?= h($categoria->created->format('d/m/Y H:i')) ?></td>
+                    <td><?= h($categoria->modified->format('d/m/Y H:i')) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $categoria->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $categoria->id]) ?>
