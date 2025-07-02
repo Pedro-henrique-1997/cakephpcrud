@@ -14,7 +14,14 @@ class UsuariosController extends AppController
         //$usuarios = "Pedro";
         //$this->set(['usuarios' => $usuarios]);
 
-        $usuarios = $this->Usuarios->find()->all();
+        //$usuarios = $this->Usuarios->find()->all();
+        $this->paginate = [
+            'limit' => 3,
+            'order' => [
+                'Usuarios.id' => 'asc',
+            ]
+        ];
+        $usuarios = $this->paginate($this->Usuarios);
         $this->set(compact('usuarios'));
     }
 

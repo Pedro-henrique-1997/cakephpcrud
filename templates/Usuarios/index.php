@@ -20,8 +20,8 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Nome</th>
+                <th scope="col"><?php echo $this->Paginator->sort('id')?></th>
+                <th scope="col"><?php echo $this->Paginator->sort('nome')?></th>
                 <th>Email</th>
                 <th>CPF</th>
                 <th>RG</th>
@@ -45,7 +45,16 @@
         </tbody>
 
     </table>
+<div class="paginator">
+    <ul class="pagination">
+        <?php echo $this->Paginator->first('<<' . __("Primeira")); ?> 
+   	  	<?php echo $this->Paginator->prev('<' . __("Anterior")); ?>  
+   	  	<?php echo $this->Paginator->numbers(); ?> 
+   	  	<?php echo $this->Paginator->next('>' . __("Proximo")); ?> 
+        <?php echo $this->Paginator->last('>>' . __("Ultima")); ?> 
 
+    </ul>
+</div>
 </body>
 
 </html>
