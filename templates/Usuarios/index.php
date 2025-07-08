@@ -38,7 +38,8 @@
                     <th><?php echo $usuario->cpf; ?></th>
                     <th><?php echo $usuario->rg; ?></th>
                     <th><?php echo $usuario->signo; ?></th>
-                    <th>Visualizar - Editar - Apagar</th>
+                    <th><?= $this->Html->link('Visualizar', ['action' => 'view', $usuario->id])?> 
+                    - Editar - Apagar</th>
                 </tr>
 
             <?php endforeach?>
