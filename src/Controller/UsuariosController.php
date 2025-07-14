@@ -46,4 +46,20 @@ class UsuariosController extends AppController
         $usuarios = $this->Usuarios->get($id);
         $this->set(compact('usuarios'));
     }
+
+    public function edit($id = null){
+        $usuarios_edit = $this->Usuarios->get($id);
+        if($this->request->is(['post', 'put'])){
+            $this->Usuarios->patchEntity($usuarios_edit, $this->request->getData());
+            if($this->Usuarios->save($usuarios_edit)){
+                $this->Flash->success(__("Os dados do usuario foram editados"));
+
+                return $this->redirect(["action" => "index"]);
+            }else{
+                $this->Flash->error(__("Os dados do usuario não foram editados"));
+            }
+        }
+
+        $this->set(compact('usuarios_edit'));
+    }
 }

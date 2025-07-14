@@ -39,7 +39,8 @@
                     <th><?php echo $usuario->rg; ?></th>
                     <th><?php echo $usuario->signo; ?></th>
                     <th><?= $this->Html->link('Visualizar', ['action' => 'view', $usuario->id])?> 
-                    - Editar - Apagar</th>
+                    -  <?= $this->Html->link('Editar', ['action' => 'edit', $usuario->id]) ?>
+                    - Apagar</th>
                 </tr>
 
             <?php endforeach?>
