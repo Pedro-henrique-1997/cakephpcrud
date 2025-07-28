@@ -40,7 +40,11 @@
                     <th><?php echo $usuario->signo; ?></th>
                     <th><?= $this->Html->link('Visualizar', ['action' => 'view', $usuario->id])?> 
                     -  <?= $this->Html->link('Editar', ['action' => 'edit', $usuario->id]) ?>
-                    - Apagar</th>
+                    - <?= $this->Form->postLink(
+                        'Deletar',
+                        ['action' => 'deletar', $usuario->id],
+                        ['confirm' => 'Tem certeza que quer excluir ' . $usuario->nome]
+                    )?></th>
                 </tr>
 
             <?php endforeach?>
