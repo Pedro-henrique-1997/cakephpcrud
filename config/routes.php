@@ -30,7 +30,11 @@ use Cake\Routing\RouteBuilder;
   * if required.
  */
 return function (RouteBuilder $routes): void {
+
+    $routes->connect('/', ['controller' => 'Usuarios', 'action' => 'index']);
+
     /*
+    
      * The default class to use for all routes
      *
      * The following route classes are supplied with CakePHP and are appropriate
@@ -55,7 +59,8 @@ return function (RouteBuilder $routes): void {
          * its action called 'display', and we pass a param to select the view file
          * to use (in this case, templates/Pages/home.php)...
          */
-        $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+        //$builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
